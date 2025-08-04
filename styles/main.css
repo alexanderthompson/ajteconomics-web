@@ -277,12 +277,18 @@ h2 {
     gap: var(--space-md);
 }
 
+.section-header {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+}
+
 .service-card {
     background: var(--bg-card);
-    padding: var(--space-md);
+    padding: var(--space-lg);
     border-radius: 8px;
     border: 1px solid var(--border);
     transition: all 0.2s;
+    position: relative;
 }
 
 .service-card:hover {
@@ -290,12 +296,41 @@ h2 {
     transform: translateY(-4px);
 }
 
+.service-number {
+    position: absolute;
+    top: var(--space-md);
+    right: var(--space-md);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    opacity: 0.5;
+}
+
 .service-card h3 {
     margin-bottom: var(--space-sm);
+    font-size: 1.25rem;
 }
 
 .service-card p {
     color: var(--text-secondary);
+    margin-bottom: var(--space-md);
+    line-height: 1.7;
+}
+
+.service-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+}
+
+.feature {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: rgba(0, 112, 243, 0.1);
+    color: var(--primary);
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: 500;
 }
 
 /* Tools */
