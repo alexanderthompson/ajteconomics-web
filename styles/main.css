@@ -229,8 +229,13 @@ body {
     border: 1px solid var(--border);
 }
 
-.showcase-icon {
-    font-size: 1.5rem;
+.showcase-number {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--primary);
+    background: rgba(0, 112, 243, 0.1);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
 }
 
 .showcase-flow {
@@ -362,6 +367,102 @@ h2 {
 .cta p {
     color: var(--text-secondary);
     margin-bottom: var(--space-lg);
+}
+
+/* Inventor Archetypes - Notepad Style */
+.archetypes {
+    background: var(--bg-primary);
+    position: relative;
+}
+
+.notebook-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-lg);
+    margin-top: var(--space-lg);
+}
+
+.notepad {
+    position: relative;
+    background: #1a1a1a;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    transform: rotate(-1deg);
+}
+
+.notepad:nth-child(even) {
+    transform: rotate(1deg);
+}
+
+.notepad:hover {
+    transform: rotate(0deg) scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.notepad-header {
+    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+    padding: var(--space-sm) var(--space-md);
+    border-bottom: 2px solid var(--border);
+    position: relative;
+}
+
+.notepad-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+}
+
+.notepad-corner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background: var(--bg-primary);
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
+}
+
+.notepad-content {
+    padding: var(--space-md);
+    background: 
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 30px,
+            var(--border) 30px,
+            var(--border) 31px
+        );
+    min-height: 200px;
+}
+
+.notepad-content p {
+    margin: 0;
+    padding: 0.4rem 0;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 30px;
+}
+
+.notepad-content p:first-child {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.notepad-link {
+    display: inline-block;
+    margin-top: var(--space-sm);
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+}
+
+.notepad-link:hover {
+    border-bottom-color: var(--primary);
 }
 
 /* Footer */
