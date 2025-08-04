@@ -1,0 +1,148 @@
+/* Animations inspired by Linear.app */
+
+/* Slide animation for showcase */
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Gradient animation */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Apply animations */
+.hero-title {
+    animation: fadeIn 0.8s ease-out;
+}
+
+.hero-subtitle {
+    animation: fadeIn 0.8s ease-out 0.2s both;
+}
+
+.hero-actions {
+    animation: fadeIn 0.8s ease-out 0.4s both;
+}
+
+/* Animated gradient background for buttons */
+.btn-primary {
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease infinite;
+}
+
+/* Hover effects */
+.service-card,
+.tool-card {
+    transform: translateY(0);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-card:hover,
+.tool-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Glow effect on hover */
+.btn-primary:hover {
+    box-shadow: 
+        0 0 20px rgba(0, 112, 243, 0.5),
+        0 0 40px rgba(121, 40, 202, 0.3),
+        0 0 60px rgba(255, 0, 128, 0.2);
+}
+
+/* Pulse animation for CTA */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 112, 243, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(0, 112, 243, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 112, 243, 0);
+    }
+}
+
+.cta .btn-primary {
+    animation: pulse 2s infinite;
+}
+
+/* Loading states */
+.loading {
+    position: relative;
+    color: transparent;
+}
+
+.loading::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Shimmer effect for coming soon cards */
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.coming-soon::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.03) 50%,
+        transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s infinite;
+    border-radius: 8px;
+    pointer-events: none;
+}
