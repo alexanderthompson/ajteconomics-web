@@ -8,6 +8,8 @@
     
     <!-- CSS -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/light-theme.css">
+    <link rel="stylesheet" href="styles/figure8.css">
     <link rel="stylesheet" href="styles/animations.css">
     
     <!-- Fonts -->
@@ -34,7 +36,42 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="grid-background"></div>
+        <div class="figure8-container">
+            <svg class="figure8-track" viewBox="0 0 800 400">
+                <!-- Figure-8 path -->
+                <path class="track-path track-outer-1" d="M 200 200 Q 400 100, 600 200 T 1000 200 Q 800 300, 600 200 T 200 200" />
+                <path class="track-path track-main" d="M 200 200 Q 400 100, 600 200 T 1000 200 Q 800 300, 600 200 T 200 200" />
+                <path class="track-path track-outer-2" d="M 200 200 Q 400 100, 600 200 T 1000 200 Q 800 300, 600 200 T 200 200" />
+            </svg>
+            
+            <!-- Main track orbs -->
+            <div class="orb-container">
+                <div class="orb orb-main orb-orange"></div>
+            </div>
+            <div class="orb-container" style="animation-delay: -5s;">
+                <div class="orb orb-main orb-purple"></div>
+            </div>
+            <div class="orb-container" style="animation-delay: -10s;">
+                <div class="orb orb-main orb-violet"></div>
+            </div>
+            <div class="orb-container" style="animation-delay: -15s;">
+                <div class="orb orb-main orb-green"></div>
+            </div>
+            
+            <!-- Outer track smaller orbs -->
+            <div class="orb-container orb-container-slow" style="animation-delay: -2s;">
+                <div class="orb orb-small orb-orange"></div>
+            </div>
+            <div class="orb-container orb-container-slow" style="animation-delay: -8s;">
+                <div class="orb orb-small orb-purple"></div>
+            </div>
+            <div class="orb-container orb-container-slower" style="animation-delay: -4s;">
+                <div class="orb orb-tiny orb-violet"></div>
+            </div>
+            <div class="orb-container orb-container-slower" style="animation-delay: -12s;">
+                <div class="orb orb-tiny orb-green"></div>
+            </div>
+        </div>
         <div class="hero-container">
             <h1 class="hero-title">
                 Purpose-built for <span class="gradient-text">medical innovation economics</span>
@@ -226,5 +263,6 @@
     </footer>
 
     <script src="scripts/main.js"></script>
+    <script src="scripts/figure8.js"></script>
 </body>
 </html>
